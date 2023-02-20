@@ -1056,10 +1056,11 @@ export default class Sheet {
   }
 
   enableOverlayer(flag) {  //GUSA
+     console.log("enableOverlayer(flag):",flag);
     if (flag) {
-      this.overlayerEl.show();//GUSA 
-    } else {
       this.overlayerEl.hide();//GUSA 
+    } else {
+      this.overlayerEl.show();//GUSA 
     }
   }
 

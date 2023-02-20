@@ -17,6 +17,7 @@ import Font from './font';
 import Format from './format';
 import Formula from './formula';
 import Freeze from './freeze';
+import Overlayer from './overlayer';
 import Merge from './merge';
 import Redo from './redo';
 import Undo from './undo';
@@ -152,6 +153,10 @@ export default class Toolbar {
         this.freezeEl = new Freeze(),
         this.autofilterEl = new Autofilter(),
         this.formulaEl = new Formula(),
+      ],
+      buildDivider(),
+      [
+        this.overlayerEl = new Overlayer(),
       ],
     ];
 

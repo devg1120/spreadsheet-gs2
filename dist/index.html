@@ -10,6 +10,7 @@
   <iframe src="https://ghbtns.com/github-btn.html?user=myliang&repo=x-spreadsheet&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
   </div>
   <div id="x-spreadsheet-demo"></div>
+  <div id="x-spreadsheet-demo2"></div>
   <script>
     function load(){
       const rows10 = { len: 1000 };
@@ -101,6 +102,20 @@
             2: { width: 200 },
           },
           rows,
+          shapes: 
+            [
+              
+             { pos: 'A1',  rindex: 0 , cindex: 0 ,type: 'shape',  name: 'xxxx' },
+             { pos: 'K2',  rindex: 1 , cindex:10 ,type: 'shape',  name: 'yyyy' },
+             { pos: 'A11', rindex:10 , cindex: 0 ,type: 'shape',  name: 'AAAA' },
+             { pos: 'K11', rindex:10 , cindex:10 ,type: 'shape',  name: 'BBBB' },
+             { pos: 'K14', rindex:13 , cindex:10 ,type: 'shape',  name: 'CCCC' },
+             { pos: 'C7',  rindex: 6 , cindex: 2 ,type: 'shape',  name: 'START'},
+             { pos: 'E10', rindex: 9 , cindex: 4 ,type: 'shape',  name: 'END'  },
+             { spos: 'C7', epos: 'E10', srindex: 6, scindex: 2,erindex: 9, ecindex: 4, type: 'line',   name: 'LINE1' },
+                
+            ]
+          ,
         }, { name: 'sheet-test', rows: rows10 }]).change((cdata) => {
           // console.log(cdata);
           console.log('>>>', xs.getData());

@@ -114,6 +114,7 @@ function moreResize() {
 
 export default class Toolbar {
   constructor(data, widthFn, isHide = false) {
+    console.log("toolbar");
     this.data = data;
     this.change = () => {};
     this.widthFn = widthFn;
@@ -132,7 +133,7 @@ export default class Toolbar {
     this.btnChildren = [
       this.undoEl = buildButtonWithIcon(`${t('toolbar.undo')} (Ctrl+Z)`, 'undo', () => this.change('undo')),
       this.redoEl = buildButtonWithIcon(`${t('toolbar.undo')} (Ctrl+Y)`, 'redo', () => this.change('redo')),
-      // this.printEl = buildButtonWithIcon('Print (Ctrl+P)', 'print', () => this.change('print')),
+     //  this.printEl = buildButtonWithIcon('Print (Ctrl+P)', 'print', () => this.change('print')),
       this.paintformatEl = buildButtonWithIcon(`${t('toolbar.paintformat')}`, 'paintformat', () => toggleChange.call(this, 'paintformat')),
       this.clearformatEl = buildButtonWithIcon(`${t('toolbar.clearformat')}`, 'clearformat', () => this.change('clearformat')),
       buildDivider(),
@@ -197,7 +198,7 @@ export default class Toolbar {
     const { data } = this;
     const style = data.getSelectedCellStyle();
     const cell = data.getSelectedCell();
-    // console.log('canUndo:', data.canUndo());
+     console.log('canUndo:', data.canUndo());
     this.undoEl.disabled(!data.canUndo());
     this.redoEl.disabled(!data.canRedo());
     this.mergeEl.active(data.canUnmerge())
@@ -219,6 +220,7 @@ export default class Toolbar {
     this.textwrapEl.active(style.textwrap);
     // console.log('freeze is Active:', data.freezeIsActive());
     this.freezeEl.active(data.freezeIsActive());
+    this.overlayerEl.active(true);
     if (cell) {
       if (cell.format) {
         this.ddFormat.setTitle(cell.format);
